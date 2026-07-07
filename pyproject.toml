@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lmpfoils"
+version = "0.1.0"
+description = "Analysis code for LiMgPO4 optically stimulated luminescence foil-detector proton dosimetry"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20",
+    "scipy",
+    "pandas",
+    "matplotlib",
+    "opencv-python-headless",
+    "tables",
+]
+
+[project.optional-dependencies]
+fit = ["lmfit"]
+notebooks = ["jupyter", "papermill", "nbclient", "seaborn"]
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["lmpfoils"]
